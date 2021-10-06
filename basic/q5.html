@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>최솟값 구하기</title>
+  </head>
+  <body>
+    <!--
+        7개의 수가 주어지면 그 숫자 중 가장 작은 수를 출력하는 프로그램을 작성하세요.
+      -->
+    <script>
+      function solution(arr) {
+        let answer;
+        // MY Solution - Array.sort(func);
+        // let nums = arr;
+        // answer = nums.sort((a, b) => {
+        //   return a - b;
+        // });
+
+        // // return answer[0];
+
+        // Solution1
+        // let min = Number.MAX_SAFE_INTEGER;
+        // // 위와같이 안정적인 최대값을 기준으로 for문을 돌면서 최솟값을 찾아도되고
+        // // let min = arr[0]; 이렇게 첫번째 인덱스를 기준점으로 잡아도 된다.
+
+        // for (let i = 0; i < arr.length; i++) {
+        //   if (arr[i] < min) min = arr[i];
+        // }
+
+        // answer = min;
+
+        // Solution2 - Math.min(number)
+        // number에는 배열이 들어가면 최솟값을 찾아주지 않는다. 즉, 인자 값이 들어가야한다. 객체는 넘어가면 안된다.
+        // 따라서 이를 해결하기 위해 Spread syntax(전개구문)을 사용해서 배열을 펼쳐서 각각의 인자들을 넘겨준다.
+        // 아니면, apply를 이용해 Math.min.apply(null, arr); 이렇게 해야한다.
+        answer = Math.min(...arr);
+
+        return answer;
+      }
+
+      let arr = [5, 3, 7, 11, 2, 15, 17];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
