@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>문자 찾기</title>
+  </head>
+  <body>
+    <!--
+      한 개의 문자열을 입력받고, 특정 문자를 입력받아 해당 특정문자가 입력받은 문자열에 몇 개
+      존재하는지 알아내는 프로그램을 작성하세요.
+      문자열의 길이는 100을 넘지 않습니다.
+
+
+      4 Ways to Convert String to Character Array in JavaScript
+      const string = 'word';
+
+      1. string.split('');
+      2. [...string]
+      3. Array.from(string);
+      4. Object.assign([], string);
+    -->
+    <script>
+      function solution(str, t) {
+        // let answer = 0;
+
+        // from, forEach 이용
+        // Array.from(str).forEach((item) => {
+        //   if (item === t) {
+        //     answer++;
+        //   }
+        // });
+
+        // for문 이용
+        // for (x of str) {
+        //   if (x === t) answer++;
+        // }
+
+        // split 이용
+        // 문자를 해당 문자를 기준으로 자른다. 그렇게되면 4개로 쪼개진다.
+        // 따라서 구분자인 R의 갯수는 3개이다.
+        // Why?? 구분자가 2개면 3개로 쪼개지고, 구분자가 3개면 4개, 4개면 5개로 쪼개지기 떄문이다.
+        let answer = str.split(t).length;
+        answer = answer - 1;
+        return answer;
+      }
+
+      let str = 'COMPUTERPROGRAMMING';
+      console.log(solution(str, 'R'));
+    </script>
+  </body>
+</html>
