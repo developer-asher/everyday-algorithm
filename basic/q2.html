@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>삼각형 판별하기</title>
+  </head>
+  <body>
+    <!-- 
+      길이가 서로 다른 A, B, C 세 개의 막대 길이가 주어지면 이 세 막대로 삼각형을 만들 수 있
+      으면 “YES"를 출력하고, 만들 수 없으면 ”NO"를 출력한다.
+    -->
+    <script>
+      function solution(a, b, c) {
+        // 가장 긴 변의 길이는 작은 두변의 합보다 작아야한다.
+
+        // MY Solution - Array.sort(func)
+        // 배열을 func 규칙에 맞춰 원배열이 정렬되고 반환.
+        // 생략하면 배열은 각 요소의 문자열 변환에 따라 각 문자의 유니 코드 포인트 값에 따라 정렬된다. ex. 9가 80보다 앞에 오지만 숫자는 문자열로 변환되기 때문에 '80'은 유니 코드 순서에서 '9' 앞에 온다.
+
+        // let array = [a, b, c];
+        // array.sort((num1, num2) => {
+        //   return num1 - num2;
+        // });
+        // if (array[2] > array[0] + array[1]) {
+        //   return 'NO';
+        // } else {
+        //   return 'YES';
+        // }
+
+        // solution
+        let maxNum;
+        let answer = 'YES';
+        const totalLen = a + b + c; // 총 길이
+
+        // 가장 큰 변 구하기
+        if (a > b) maxNum = a;
+        else maxNum = b;
+        if (c > maxNum) maxNum = c;
+
+        if (totalLen - maxNum <= maxNum) answer = 'NO';
+        return answer;
+      }
+
+      console.log(solution(13, 33, 17));
+    </script>
+  </body>
+</html>
