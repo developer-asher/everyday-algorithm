@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>대소문자 변환</title>
+  </head>
+  <body>
+    <!--
+      대문자와 소문자가 같이 존재하는 문자열을 입력받아 대문자는 소문자로 소문자는 대문자로
+      변환하여 출력하는 프로그램을 작성하세요.
+    -->
+    <script>
+      function solution(str) {
+        let answer = '';
+
+        // string api를 이용한 문자변환
+        // for (s of str) {
+        //   if (s === s.toUpperCase()) s = s.toLowerCase();
+        //   else s = s.toUpperCase();
+
+        //   answer += s;
+        // }
+
+        // 아스키코드를 이용한 문자변환
+        // 아스키토드를 문자로 바꿔주는 api : String.fromCharCode()
+        for (s of str) {
+          num = s.charCodeAt();
+          if (num >= 65 && num <= 90) s = String.fromCharCode(num + 32);
+          if (num >= 97 && num <= 122) s = String.fromCharCode(num - 32);
+
+          answer += s;
+        }
+
+        return answer;
+      }
+
+      let str = 'StuDY';
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
