@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>가장 긴 문자열</title>
+  </head>
+  <body>
+    <!--
+      N개의 문자열이 입력되면 그 중 가장 긴 문자열을 출력하는 프로그램을 작성하세요.
+    -->
+    <script>
+      function solution(str) {
+        let answer = '';
+        let max = Number.MIN_SAFE_INTEGER;
+
+        for (s of str) {
+          if (s.length >= max) {
+            max = s.length;
+            answer = s;
+          }
+        }
+
+        return answer;
+      }
+      let str = ['teacher', 'time', 'student', 'beautiful', 'good'];
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
