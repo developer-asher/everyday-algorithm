@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>중복 단어 제거</title>
+  </head>
+  <body>
+    <!--
+      N개의 문자열이 입력되면 중복된 문자열은 제거하고 출력하는 프로그램을 작성하세요.
+      출력하는 문자열은 원래의 입력순서를 유지합니다.
+    -->
+    <script>
+      function solution(str) {
+        // forEach, includes 이용한 문제해결
+        // let answer = [];
+        // str.forEach(s => {
+        //   if (!answer.includes(s)) answer.push(s);
+        // });
+
+        // filter, indexOf 이용한 문제해결
+        let answer;
+        answer = str.filter((s, index) => {
+          return str.indexOf(s) === index;
+        });
+
+        return answer;
+      }
+      let str = ['good', 'time', 'good', 'time', 'student'];
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
